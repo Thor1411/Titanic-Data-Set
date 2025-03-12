@@ -57,7 +57,7 @@ Standard Deviation: 13.88
 Skewness: 0.45
 Kurtosis: 0.44
 ```
-![Age Distribution](images/age_dist.png)
+![Age Distribution](Images/agedist.png)
 
 The Age distribution is right-skewed, suggesting that more young people traveled than older individuals.
 
