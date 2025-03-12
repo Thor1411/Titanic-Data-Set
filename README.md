@@ -69,7 +69,7 @@ Standard Deviation: 55.31
 Skewness: 4.07
 Kurtosis: 23.31
 ```
-![Fare Distribution](images/fare_dist.png)
+![Fare Distribution](Images/faredist.png)
 
 The Fare distribution is highly right-skewed, suggesting that the majority of passengers opted for cheaper tickets. The long right tail indicates that while most passengers paid lower fares, a smaller group paid significantly higher fares.
 
