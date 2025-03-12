@@ -1,9 +1,10 @@
-# Exploratory Data Analysis Using the Titanic Dataset
-The Titanic dataset originally consisted of 1309 rows and 14 columns, as shown below:
+# Titanic Dataset Exploratory Data Analysis (EDA)
 
-![Initial DataFrame](Images/Dataframe.png)
+This analysis explores the **Titanic dataset**, a historical dataset detailing passengers aboard the ill-fated RMS Titanic. The dataset provides various passenger details such as age, sex, class, survival status, and more. The aim of this exploratory analysis is to uncover patterns and relationships within the data, especially those influencing passenger survival.
 
-### Dataset Description
+## Initial Dataset Overview
+
+The Titanic dataset initially contains **1309 rows** and **14 columns** with the following features:
 
 - **pclass:** Passenger Class (1 = 1st, 2 = 2nd, 3 = 3rd)
 - **survived:** Survival (0 = No, 1 = Yes)
@@ -17,123 +18,119 @@ The Titanic dataset originally consisted of 1309 rows and 14 columns, as shown b
 - **cabin:** Cabin Number
 - **embarked:** Port of Embarkation (C = Cherbourg, Q = Queenstown, S = Southampton)
 - **boat:** Lifeboat (if survived)
-- **body:** Body Number (if not survived and the body is recovered)
+- **body:** Body Number (if not survived and body is recovered)
 - **home.dest:** Home Destination
 
 ## Data Cleaning
 
-The following data cleaning steps were performed:
+The dataset underwent several data cleaning steps to ensure meaningful analysis:
 
 - **Column Removal:**  
-  Removed irrelevant columns for the analysis: `name`, `ticket`, `cabin`, `embarked`, `boat`, `body`, and `home.dest`.
+  Irrelevant columns for this analysis, including `name`, `ticket`, `cabin`, `embarked`, `boat`, `body`, and `home.dest`, were removed to simplify the dataset.
 
 - **Handling Missing Values:**  
-  - Filled in missing values in the `age` column with the median age for the respective gender.
-  - Filled in missing values in the `fare` column with the mean fare for the respective passenger class.
+  - Missing `age` values were filled with the median age for the respective gender.
+  - Missing `fare` values were filled with the mean fare for the respective passenger class.
 
-- **Duplicates:**  
-  Checked for and removed duplicate records.
+- **Duplicate Records:**  
+  Duplicate records were identified and removed to ensure data consistency.
 
 - **Outlier Detection:**  
-  Examined the `fare` and `age` columns using box plots.
-
-  ![Outliers](Images/outliers.png)
-
-  Although outliers are present in both the `fare` and `age` columns, they have been retained because they represent real-world variations (such as extremely wealthy passengers or very elderly individuals) and may hold meaningful correlations with survival.
+  Outliers in the `fare` and `age` columns were examined using box plots. While outliers were present, they were retained as they represent real-world extremes (e.g., extremely wealthy passengers or very elderly individuals), which could potentially offer valuable insights into survival patterns.
 
 - **Feature Engineering:**  
-  Combined the `sibsp` and `parch` columns into a single, more informative feature named `is_alone`.
+  The `sibsp` and `parch` columns were combined into a new feature named `is_alone`, indicating whether a passenger was travelling alone.
 
-After these cleaning steps, the dataset was reduced to 1100 rows and 6 columns.
-
+After these steps, the dataset was reduced to **1100 rows** and **6 columns**.
 
 ## Univariate Analysis
 
-### Age Distribution
-```
-Mean: 29.8
-Median: 28.0
-Standard Deviation: 13.88
-Skewness: 0.45
-Kurtosis: 0.44
-```
+### 1. **Age Distribution:**
+
+- **Mean:** 29.8  
+- **Median:** 28.0  
+- **Standard Deviation:** 13.88  
+- **Skewness:** 0.45 (slightly right-skewed)  
+- **Kurtosis:** 0.44
+
+The age distribution is right-skewed, indicating that more younger passengers were aboard compared to older passengers.
+
 ![Age Distribution](Images/agedist.png)
 
-The Age distribution is right-skewed, suggesting that more young people traveled than older individuals.
+### 2. **Fare Distribution:**
 
-### Fare Distribution
-```
-Mean: 36.93
-Median: 16.1
-Standard Deviation: 55.31
-Skewness: 4.07
-Kurtosis: 23.31
-```
+- **Mean:** 36.93  
+- **Median:** 16.1  
+- **Standard Deviation:** 55.31  
+- **Skewness:** 4.07 (highly right-skewed)  
+- **Kurtosis:** 23.31
+
+The fare distribution is highly right-skewed, with a larger portion of passengers paying low fares, while a small group paid significantly higher fares.
+
 ![Fare Distribution](Images/faredist.png)
 
-The Fare distribution is highly right-skewed, suggesting that the majority of passengers opted for cheaper tickets. The long right tail indicates that while most passengers paid lower fares, a smaller group paid significantly higher fares.
+### 3. **Gender Distribution:**
 
-### Sex Distribution
-```
-Number of male passengers:  428
-Number of female passengers:  672
-```
+- **Male Passengers:** 428  
+- **Female Passengers:** 672
+
+More female passengers were aboard than male passengers.
+
 ![Sex Distribution](Images/sexdist.png)
 
-More men were aboard than women.
+### 4. **Passenger Class Distribution:**
 
-### Passenger Class Distribution
-```
-Number of passengers in 1st class:  312
-Number of passengers in 2nd class:  241
-Number of passengers in 3rd class:  547
-```
+- **1st Class:** 312  
+- **2nd Class:** 241  
+- **3rd Class:** 547
+
+Most passengers were in 3rd class, with a smaller proportion in 1st and 2nd class.
+
 ![PClass Distribution](Images/pclassdist.png)
 
-Almost half of the passengers were travelling in 3rd class, while only a few were travelling in 1st and 2nd classes.
+### 5. **Survival Analysis:**
 
-### Survival Analysis
-```
-Number of passengers who survived:  464
-Number of passengers who did not survive:  636
-```
-![Survival](images/survival.png)
+- **Survived:** 464 passengers  
+- **Did not Survive:** 636 passengers
 
-42.2% of passengers survived, while the rest perished in the tragedy.
+42.2% of passengers survived, while the majority perished.
 
-### Travelling Alone?
-```
-Number of passengers who were not alone:  490
-Number of passengers who were alone:  610
-```
-![Travelling Alone](images/travelling_alone.png)
+![Survival](Images/survival.png)
 
-55.5% of passengers were travelling alone, while only 44.5% travelled with family.
+### 6. **Travelling Alone:**
+
+- **Not Alone:** 490 passengers  
+- **Alone:** 610 passengers
+
+55.5% of passengers were travelling alone, while 44.5% were travelling with family.
+
+![Travelling Alone](Images/travelling_alone.png)
 
 ## Bivariate Analysis
 
-### Passenger Class vs Survival
-
-![pclass_vs_survival](images/pclass_vs_survival_bar.png)
-![pclass_vs_survival](images/pclass_vs_survival_pie.png)
+### 1. **Passenger Class vs Survival**
 
 Passengers in elite classes exhibited a significantly higher survival rate compared to those in 3rd class, suggesting that priority may have been given to elite passengers during the rescue operations.
 
-### Sex vs Survival
+![Passenger Class vs Survival](Images/pclass_vs_survival_bar.png)
+![Passenger Class vs Survival](Images/pclass_vs_survival_pie.png)
 
-![sex_vs_survival](images/sex_vs_survival_bar.png)
-![sex_vs_survival](images/sex_vs_survival_pie.png)
+### 2. **Sex vs Survival**
 
-Female passengers exhibited a significantly higher survival rate (73.4%) compared to male passengers (22.3%), indicating that rescue operations have prioritized females.
+Female passengers exhibited a significantly higher survival rate (73.4%) compared to male passengers (22.3%), indicating that rescue operations prioritized females.
 
-### Age vs Survival
-![age_vs_survival](images/age_vs_survival.png)
+![Sex vs Survival](Images/sex_vs_survival_bar.png)
+![Sex vs Survival](Images/sex_vs_survival_pie.png)
 
-Children (0-20) and middle-aged (30-60) passengers experienced higher survival rates compared to young adults (20-30), while passengers aged 60 and above had the lowest survival rate. This pattern suggests that rescue efforts may have been influenced by age, potentially prioritizing the very young and middle-aged, while the elderly were at a distinct disadvantage during the tragedy.
+### 3. **Age vs Survival**
 
-### Travelling Alone? vs Survival
-![alone_vs_survival](images/alone_vs_survival_bar.png)
-![alone_vs_survival](images/alone_vs_survival_pie.png)
+Children (0-20) and middle-aged (30-60) passengers experienced higher survival rates compared to young adults (20-30). Passengers aged 60 and above had the lowest survival rate, suggesting age may have influenced the priority of rescue efforts.
 
-Passengers accompanied by family had a survival rate of 51.4%, compared to only 34.8% for those travelling alone. This suggests that the presence of family provided crucial support during the emergency, potentially leading to prioritized rescue efforts and improved survival odds.
+![Age vs Survival](Images/age_vs_survival.png)
 
+### 4. **Travelling Alone vs Survival**
+
+Passengers accompanied by family had a survival rate of 51.4%, compared to only 34.8% for those travelling alone. This suggests that being accompanied by family may have improved survival chances.
+
+![Travelling Alone vs Survival](Images/alone_vs_survival_bar.png)
+![Travelling Alone vs Survival](Images/alone_vs_survival_pie.png)
