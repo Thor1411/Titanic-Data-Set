@@ -37,7 +37,7 @@ The following data cleaning steps were performed:
 - **Outlier Detection:**  
   Examined the `fare` and `age` columns using box plots.
 
-  ![Outliers](images/outliers.png)
+  ![Outliers](Images/outliers.png)
 
   Although outliers are present in both the `fare` and `age` columns, they have been retained because they represent real-world variations (such as extremely wealthy passengers or very elderly individuals) and may hold meaningful correlations with survival.
 
