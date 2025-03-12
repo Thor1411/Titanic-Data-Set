@@ -78,7 +78,7 @@ The Fare distribution is highly right-skewed, suggesting that the majority of pa
 Number of male passengers:  428
 Number of female passengers:  672
 ```
-![Sex Distribution](images/sex_dist.png)
+![Sex Distribution](Images/sexdist.png)
 
 More men were aboard than women.
 
@@ -88,7 +88,7 @@ Number of passengers in 1st class:  312
 Number of passengers in 2nd class:  241
 Number of passengers in 3rd class:  547
 ```
-![PClass Distribution](images/pclass_dist.png)
+![PClass Distribution](Images/pclassdist.png)
 
 Almost half of the passengers were travelling in 3rd class, while only a few were travelling in 1st and 2nd classes.
 
