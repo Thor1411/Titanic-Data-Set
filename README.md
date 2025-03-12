@@ -1,7 +1,7 @@
 # Exploratory Data Analysis Using the Titanic Dataset
 The Titanic dataset originally consisted of 1309 rows and 14 columns, as shown below:
 
-![Initial DataFrame](images/Dataframe.png)
+![Initial DataFrame](Images/Dataframe.png)
 
 ### Dataset Description
 
