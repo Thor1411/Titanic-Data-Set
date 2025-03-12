@@ -95,7 +95,7 @@ Most passengers were in 3rd class, with a smaller proportion in 1st and 2nd clas
 
 42.2% of passengers survived, while the majority perished.
 
-![Survival](Images/suv.png)
+![Survival](Images/suvdist.png)
 
 ### 6. **Travelling Alone:**
 
