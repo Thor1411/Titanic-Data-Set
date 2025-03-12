@@ -104,7 +104,7 @@ Most passengers were in 3rd class, with a smaller proportion in 1st and 2nd clas
 
 55.5% of passengers were travelling alone, while 44.5% were travelling with family.
 
-![Travelling Alone](Images/travelling_alone.png)
+![Travelling Alone](Images/alonedist.png)
 
 ## Bivariate Analysis
 
@@ -112,25 +112,24 @@ Most passengers were in 3rd class, with a smaller proportion in 1st and 2nd clas
 
 Passengers in elite classes exhibited a significantly higher survival rate compared to those in 3rd class, suggesting that priority may have been given to elite passengers during the rescue operations.
 
-![Passenger Class vs Survival](Images/pclass_vs_survival_bar.png)
-![Passenger Class vs Survival](Images/pclass_vs_survival_pie.png)
+![Passenger Class vs Survival](Images/pclass-sur.png)
+![Passenger Class vs Survival](Images/pclass-sur2.png)
 
 ### 2. **Sex vs Survival**
 
 Female passengers exhibited a significantly higher survival rate (73.4%) compared to male passengers (22.3%), indicating that rescue operations prioritized females.
 
-![Sex vs Survival](Images/sex_vs_survival_bar.png)
-![Sex vs Survival](Images/sex_vs_survival_pie.png)
+![Sex vs Survival](Images/sex-sur.png)
+![Sex vs Survival](Images/sex-sur2.png)
 
 ### 3. **Age vs Survival**
 
 Children (0-20) and middle-aged (30-60) passengers experienced higher survival rates compared to young adults (20-30). Passengers aged 60 and above had the lowest survival rate, suggesting age may have influenced the priority of rescue efforts.
 
-![Age vs Survival](Images/age_vs_survival.png)
+![Age vs Survival](Images/age-sur.png)
 
 ### 4. **Travelling Alone vs Survival**
 
 Passengers accompanied by family had a survival rate of 51.4%, compared to only 34.8% for those travelling alone. This suggests that being accompanied by family may have improved survival chances.
 
-![Travelling Alone vs Survival](Images/alone_vs_survival_bar.png)
-![Travelling Alone vs Survival](Images/alone_vs_survival_pie.png)
+![Travelling Alone vs Survival](Images/alone-sur.png)
